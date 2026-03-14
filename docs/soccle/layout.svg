@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 420 310" width="840" height="620">
+  <style>
+    .outline { fill: #f5e6c8; stroke: #333; stroke-width: 0.8; }
+    .hub { fill: #b0c4de; stroke: #0000ff; stroke-width: 0.5; }
+    .ssd { fill: #d4edda; stroke: #0000ff; stroke-width: 0.5; }
+    .cable-exit { fill: #fff; stroke: #333; stroke-width: 0.5; }
+    .velcro { fill: #999; stroke: #666; stroke-width: 0.3; }
+    .dim { font-family: sans-serif; font-size: 5px; fill: #333; }
+    .dim-line { stroke: #999; stroke-width: 0.3; }
+    .dim-arrow { stroke: #999; stroke-width: 0.3; marker-end: url(#arrow); marker-start: url(#arrow-rev); }
+    .label { font-family: sans-serif; font-size: 4.5px; fill: #333; text-anchor: middle; }
+    .label-small { font-family: sans-serif; font-size: 3.5px; fill: #666; text-anchor: middle; }
+    .cable-label { font-family: sans-serif; font-size: 3.5px; fill: #c00; text-anchor: middle; }
+    .title { font-family: sans-serif; font-size: 7px; fill: #333; font-weight: bold; }
+    .border { fill: none; stroke: #999; stroke-width: 0.3; stroke-dasharray: 2,2; }
+    .cable-channel { fill: #fff3e0; stroke: #e65100; stroke-width: 0.3; stroke-dasharray: 3,2; }
+    .cable-line { stroke: #e65100; stroke-width: 0.5; stroke-dasharray: 2,1; }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4" fill="none" stroke="#999" stroke-width="0.5"/>
+    </marker>
+    <marker id="arrow-rev" markerWidth="4" markerHeight="4" refX="1" refY="2" orient="auto">
+      <path d="M4,0 L0,2 L4,4" fill="none" stroke="#999" stroke-width="0.5"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="177.85" y="-18" class="title" text-anchor="middle">MacSoccle — Component Layout (Layer 2/3)</text>
+
+  <!-- Outer plate -->
+  <rect x="0" y="0" width="355.7" height="248.1" rx="7.25" ry="7.25" class="outline"/>
+
+  <!-- 5mm border (dashed) -->
+  <rect x="5" y="5" width="345.7" height="238.1" rx="3" ry="3" class="border"/>
+
+  <!-- Cable exit notch (middle of left short side) -->
+  <rect x="-2" y="119.05" width="7" height="10" rx="1" ry="1" class="cable-exit"/>
+  <text x="-8" y="124.05" class="cable-label" text-anchor="end">USB-C</text>
+  <text x="-8" y="128.5" class="cable-label" text-anchor="end">cable out</text>
+
+  <!-- USB Hub: 62x62, positioned 20mm from left, centered vertically -->
+  <rect x="20" y="93.05" width="62" height="62" rx="3" ry="3" class="hub"/>
+  <text x="51" y="121" class="label">HUB</text>
+  <text x="51" y="127" class="label-small">Satechi</text>
+  <text x="51" y="132" class="label-small">62×62</text>
+
+  <!-- SSD 1: top-left, connector on RIGHT side (facing center gap) -->
+  <!-- x: 97-184, y: 55-114. Gap to SSD3: 20mm -->
+  <rect x="97" y="55" width="87" height="59" rx="2" ry="2" class="ssd"/>
+  <text x="140.5" y="82" class="label">SSD 1</text>
+  <text x="140.5" y="88" class="label-small">87×59</text>
+  <rect x="182" y="74" width="4" height="21" rx="1" ry="1" fill="#e65100" opacity="0.5"/>
+  <text x="192" y="87" class="label-small" text-anchor="start">USB-C</text>
+
+  <!-- SSD 2: top-right, connector on LEFT side (facing center gap) -->
+  <!-- x: 244-331, y: 35-94. Gap to SSD4: 60mm -->
+  <rect x="244" y="35" width="87" height="59" rx="2" ry="2" class="ssd"/>
+  <text x="287.5" y="62" class="label">SSD 2</text>
+  <text x="287.5" y="68" class="label-small">87×59</text>
+  <rect x="242" y="54" width="4" height="21" rx="1" ry="1" fill="#e65100" opacity="0.5"/>
+  <text x="236" y="67" class="label-small" text-anchor="end">USB-C</text>
+
+  <!-- SSD 3: bottom-left, connector on RIGHT side (facing center gap) -->
+  <!-- x: 97-184, y: 134-193. Gap from SSD1: 20mm -->
+  <rect x="97" y="134" width="87" height="59" rx="2" ry="2" class="ssd"/>
+  <text x="140.5" y="161" class="label">SSD 3</text>
+  <text x="140.5" y="167" class="label-small">87×59</text>
+  <rect x="182" y="153" width="4" height="21" rx="1" ry="1" fill="#e65100" opacity="0.5"/>
+  <text x="192" y="166" class="label-small" text-anchor="start">USB-C</text>
+
+  <!-- SSD 4: bottom-right, connector on LEFT side (facing center gap) -->
+  <!-- x: 244-331, y: 154-213. Gap from SSD2: 60mm -->
+  <rect x="244" y="154" width="87" height="59" rx="2" ry="2" class="ssd"/>
+  <text x="287.5" y="181" class="label">SSD 4</text>
+  <text x="287.5" y="187" class="label-small">87×59</text>
+  <rect x="242" y="173" width="4" height="21" rx="1" ry="1" fill="#e65100" opacity="0.5"/>
+  <text x="236" y="186" class="label-small" text-anchor="end">USB-C</text>
+
+  <!-- Cable routing: all cables go from SSD connector → center gap → outside edge → back to hub -->
+
+  <!-- SSD1 cable: connector right → center → up to top conduit (y=38) → left to hub north -->
+  <line x1="186" y1="84" x2="200" y2="84" class="cable-line"/>
+  <line x1="200" y1="84" x2="200" y2="38" class="cable-line"/>
+  <line x1="200" y1="38" x2="51" y2="38" class="cable-line"/>
+  <line x1="51" y1="38" x2="51" y2="93" class="cable-line"/>
+
+  <!-- SSD2 cable: connector left → center → up to top conduit (y=33) → left to hub north -->
+  <line x1="242" y1="64" x2="210" y2="64" class="cable-line"/>
+  <line x1="210" y1="64" x2="210" y2="33" class="cable-line"/>
+  <line x1="210" y1="33" x2="45" y2="33" class="cable-line"/>
+  <line x1="45" y1="33" x2="45" y2="93" class="cable-line"/>
+
+  <!-- SSD3 cable: connector right → center → down to bottom conduit (y=210) → left to hub south -->
+  <line x1="186" y1="164" x2="200" y2="164" class="cable-line"/>
+  <line x1="200" y1="164" x2="200" y2="210" class="cable-line"/>
+  <line x1="200" y1="210" x2="51" y2="210" class="cable-line"/>
+  <line x1="51" y1="210" x2="51" y2="155" class="cable-line"/>
+
+  <!-- SSD4 cable: connector left → center → down to bottom conduit (y=215) → left to hub south -->
+  <line x1="242" y1="184" x2="210" y2="184" class="cable-line"/>
+  <line x1="210" y1="184" x2="210" y2="215" class="cable-line"/>
+  <line x1="210" y1="215" x2="45" y2="215" class="cable-line"/>
+  <line x1="45" y1="215" x2="45" y2="155" class="cable-line"/>
+
+  <!-- Velcro dots: 4 per side = 16 total, grouped near corners (~20mm from corner) -->
+  <!-- Left short side: x=8 -->
+  <circle cx="8" cy="20" r="5" class="velcro"/>
+  <circle cx="8" cy="60" r="5" class="velcro"/>
+  <circle cx="8" cy="188.1" r="5" class="velcro"/>
+  <circle cx="8" cy="228.1" r="5" class="velcro"/>
+  <!-- Right short side: x=347.7 -->
+  <circle cx="347.7" cy="20" r="5" class="velcro"/>
+  <circle cx="347.7" cy="60" r="5" class="velcro"/>
+  <circle cx="347.7" cy="188.1" r="5" class="velcro"/>
+  <circle cx="347.7" cy="228.1" r="5" class="velcro"/>
+  <!-- Top long side: y=8 -->
+  <circle cx="20" cy="8" r="5" class="velcro"/>
+  <circle cx="60" cy="8" r="5" class="velcro"/>
+  <circle cx="295.7" cy="8" r="5" class="velcro"/>
+  <circle cx="335.7" cy="8" r="5" class="velcro"/>
+  <!-- Bottom long side: y=240.1 -->
+  <circle cx="20" cy="240.1" r="5" class="velcro"/>
+  <circle cx="60" cy="240.1" r="5" class="velcro"/>
+  <circle cx="295.7" cy="240.1" r="5" class="velcro"/>
+  <circle cx="335.7" cy="240.1" r="5" class="velcro"/>
+
+  <!-- Dimension: width (top) -->
+  <line x1="0" y1="-10" x2="355.7" y2="-10" class="dim-arrow"/>
+  <text x="177.85" y="-12" class="dim" text-anchor="middle">355.7 mm</text>
+
+  <!-- Dimension: depth (right) -->
+  <line x1="365" y1="0" x2="365" y2="248.1" class="dim-arrow"/>
+  <text x="375" y="128" class="dim" text-anchor="middle" transform="rotate(90,375,128)">248.1 mm</text>
+
+  <!-- Dimension: hub from left edge -->
+  <line x1="0" y1="165" x2="20" y2="165" class="dim-arrow"/>
+  <text x="10" y="172" class="dim" text-anchor="middle">20</text>
+
+  <!-- Dimension: gap SSD1-SSD3 (20mm) -->
+  <line x1="92" y1="114" x2="92" y2="134" class="dim-arrow"/>
+  <text x="88" y="127" class="dim" text-anchor="end">20</text>
+
+  <!-- Dimension: gap SSD2-SSD4 (60mm) -->
+  <line x1="239" y1="94" x2="239" y2="154" class="dim-arrow"/>
+  <text x="235" y="127" class="dim" text-anchor="end">60</text>
+
+  <!-- Dimension: gap between SSD columns (60mm) -->
+  <line x1="184" y1="124" x2="244" y2="124" class="dim-arrow"/>
+  <text x="214" y="122" class="dim" text-anchor="middle">60</text>
+
+  <!-- Legend -->
+  <rect x="305" y="215" width="8" height="5" rx="1" class="hub"/>
+  <text x="316" y="219.5" class="label-small" text-anchor="start">Hub</text>
+  <rect x="305" y="223" width="8" height="5" rx="1" class="ssd"/>
+  <text x="316" y="227.5" class="label-small" text-anchor="start">SSD</text>
+  <circle cx="309" cy="234" r="3" class="velcro"/>
+  <text x="316" y="235.5" class="label-small" text-anchor="start">Velcro (10mm)</text>
+</svg>
