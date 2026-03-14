@@ -5,10 +5,10 @@
     .conduit { fill: #fff; stroke: #c77; stroke-width: 0.3; }
     .mesh-void { fill: #fff; stroke: #bbb; stroke-width: 0.3; }
     .velcro-hole { fill: #fff; stroke: #999; stroke-width: 0.3; }
-    .label { font-family: sans-serif; font-size: 4px; fill: #333; text-anchor: middle; }
-    .label-small { font-family: sans-serif; font-size: 3px; fill: #666; text-anchor: middle; }
-    .label-conduit { font-family: sans-serif; font-size: 2.5px; fill: #a44; text-anchor: middle; }
-    .title { font-family: sans-serif; font-size: 7px; fill: #333; font-weight: bold; }
+    .label { font-family: sans-serif; font-size: 6px; fill: #333; text-anchor: middle; }
+    .label-small { font-family: sans-serif; font-size: 4px; fill: #666; text-anchor: middle; }
+    .label-conduit { font-family: sans-serif; font-size: 4px; fill: #a44; text-anchor: middle; }
+    .title { font-family: sans-serif; font-size: 10px; fill: #FFF; font-weight: bold; }
     .frame-dim { font-family: sans-serif; font-size: 3.5px; fill: #864; }
   </style>
 
@@ -29,8 +29,6 @@
     </pattern>
   </defs>
 
-  <!-- Title -->
-  <text x="177.85" y="-12" class="title" text-anchor="middle">MacSoccle — Mesh Design (Layer 2/3)</text>
 
   <!-- ==================== SOLID PLATE (everything starts solid) ==================== -->
   <rect x="0" y="0" width="355.7" height="248.1" rx="7.25" ry="7.25" class="solid"/>
@@ -39,94 +37,51 @@
 
     <!-- ==================== COMPONENT CUTOUTS (white) ==================== -->
 
-    <rect x="20" y="93.05" width="62" height="62" rx="2" class="component"/>
+    <rect x="30" y="93.05" width="62" height="62" rx="2" class="component"/>
     <text x="51" y="122" class="label">HUB</text>
     <text x="51" y="127" class="label-small">62x62</text>
 
     <rect x="97" y="55" width="87" height="59" rx="2" class="component"/>
     <text x="140.5" y="84" class="label">SSD 1</text>
 
-    <rect x="244" y="35" width="87" height="59" rx="2" class="component"/>
+    <rect x="240" y="30" width="87" height="59" rx="2" class="component"/>
     <text x="287.5" y="64" class="label">SSD 2</text>
 
     <rect x="97" y="134" width="87" height="59" rx="2" class="component"/>
     <text x="140.5" y="163" class="label">SSD 3</text>
 
-    <rect x="244" y="154" width="87" height="59" rx="2" class="component"/>
+    <rect x="240" y="158" width="87" height="59" rx="2" class="component"/>
     <text x="287.5" y="183" class="label">SSD 4</text>
 
     <!-- ==================== CABLE CONDUITS (white cross-hatch) ==================== -->
 
     <!-- Hub cable exit -->
-    <rect x="0" y="115" width="20" height="18" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
+    <rect x="0" y="124" width="30" height="5" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Top horizontal corridor inside frame (y 30-48) -->
     <rect x="38" y="30" width="180" height="18" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Left vertical north (hub to top corridor) -->
-    <rect x="38" y="30" width="26" height="63" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
+    <rect x="38" y="30" width="50" height="63" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Center vertical north (top corridor to SSD connectors) -->
     <rect x="190" y="30" width="28" height="58" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- SSD2 connector link -->
-    <rect x="218" y="56" width="26" height="12" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
+    <rect x="218" y="40" width="22" height="45" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Bottom horizontal corridor inside frame (y 200-218) -->
     <rect x="38" y="200" width="180" height="18" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Left vertical south (hub to bottom corridor) -->
-    <rect x="38" y="155" width="26" height="63" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
+    <rect x="38" y="155" width="50" height="63" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- Center vertical south (bottom corridor to SSD connectors) -->
     <rect x="190" y="160" width="28" height="58" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
     <!-- SSD4 connector link -->
-    <rect x="218" y="178" width="26" height="12" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
+    <rect x="218" y="163" width="22" height="48" rx="1" fill="url(#cable-hatch)" stroke="#c99" stroke-width="0.3"/>
 
-    <!-- ==================== MESH VOIDS (white hatched) — maximize cutouts ==================== -->
-
-    <!-- Top-left, right of cable channel, above hub -->
-    <rect x="70" y="55" width="22" height="30" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Bottom-left, right of cable channel, below hub -->
-    <rect x="70" y="162" width="22" height="30" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-
-    <!-- === CENTER GAP (x 184-244, between SSD columns) === -->
-
-    <!-- Center gap, right of cables, top section -->
-    <rect x="220" y="50" width="22" height="22" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Center gap, right of cables, above SSD2 connector link -->
-    <rect x="220" y="72" width="22" height="16" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Center gap, right of cables, big middle void -->
-    <rect x="220" y="96" width="22" height="25" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-    <rect x="220" y="127" width="22" height="25" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Center gap, right of cables, below SSD4 connector link -->
-    <rect x="220" y="158" width="22" height="16" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Center gap, right of cables, bottom section -->
-    <rect x="220" y="196" width="22" height="2" rx="1" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- Center gap, left of cables (narrow slots) -->
-    <rect x="184" y="50" width="5" height="5" rx="1" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-    <rect x="184" y="117" width="5" height="14" rx="1" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- === BIG ZONE BETWEEN SSD2 AND SSD4 (x 249-322, y 99-149) === -->
-    <!-- 4 large voids in 2x2 grid with 8mm ribs -->
-
-    <rect x="249" y="99" width="30" height="20" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-    <rect x="287" y="99" width="33" height="20" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-    <rect x="249" y="127" width="30" height="20" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-    <rect x="287" y="127" width="33" height="20" rx="2" fill="url(#mesh-hatch)" stroke="#bbb" stroke-width="0.3"/>
-
-    <!-- === TOP-RIGHT AREA (above SSD2, x 244-326, y 30-35) === -->
-    <!-- Only 5mm tall — too narrow, skip -->
-
-    <!-- Right strip (x 326-348) is within the 30mm frame — kept solid -->
 
     <!-- ==================== VELCRO HOLES (layer 3 only) ==================== -->
     <circle cx="8" cy="20" r="5" class="velcro-hole"/>
@@ -241,6 +196,9 @@
   <!-- 30mm frame indicator -->
   <rect x="30" y="30" width="295.7" height="188.1" rx="3" ry="3" fill="none" stroke="#864" stroke-width="0.4" stroke-dasharray="3,2"/>
   <text x="32" y="28" class="frame-dim">30mm frame inner edge</text>
+
+  <!-- Title -->
+  <text x="177.85" y="16" class="title" text-anchor="middle">MacSoccle — Mesh Design (Layer 2/3)</text>
 
   <!-- ==================== LEGEND ==================== -->
   <rect x="5" y="252" width="10" height="6" rx="1" class="solid" stroke="#333" stroke-width="0.3"/>

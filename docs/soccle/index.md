@@ -70,7 +70,7 @@ The two center layers (2 and 3) use a mesh/grid pattern in unused areas to reduc
 * Cable channels routed in center layers between hub and SSD positions
 * Only the hub's own USB-C cable exits the soccle, from the middle of one short side (works for left or right USB-C ports on the MacBook)
 
-## Component layout
+## Component layout 1
 
 Hub near cable exit (left short side), 4 SSDs in a 2x2 grid to the right.
 Hub has 2 USB-C ports on north side (→ SSD1, SSD2) and 2 on south side (→ SSD3, SSD4).
@@ -78,8 +78,6 @@ Cables run along the top and bottom edges, on the outside of the SSDs.
 
 
 ![](layout.svg)
-
-## Center layer mesh design
 
 The two center layers (2 and 3) have:
 * Component cutouts for SSDs, hub, and hub cable exit
@@ -90,3 +88,5 @@ The two center layers (2 and 3) have:
 * Layer 3 additionally has 16 velcro holes (10mm)
 
 ![](mesh.svg)
+
+## Component layout 2
